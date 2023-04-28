@@ -34,9 +34,9 @@
 
 <p><a href="https://imgur.com/miLS17P"><img src="https://i.imgur.com/miLS17P.png" title="source: imgur.com" /></a></p>
 
-<p>-Next is to ensure DC-1&#39;s private IP address is changed from dynamic to static. 
--DC-1&#39;s private IP address needs to be static so it does not change during the course of this exercise. 
--To do this, go to DC-1&#39;s &quot;Networking&quot; section and click on the virtual Network Interface Card (NIC).</p>
+- Next is to ensure DC-1&#39;s private IP address is changed from dynamic to static. 
+- DC-1&#39;s private IP address needs to be static so it does not change during the course of this exercise. 
+- To do this, go to DC-1&#39;s &quot;Networking&quot; section and click on the virtual Network Interface Card (NIC).
 
 <p><a href="https://imgur.com/aQEuOOM"><img src="https://i.imgur.com/aQEuOOM.png" title="source: imgur.com" /></a></p>
 
