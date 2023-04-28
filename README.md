@@ -6,25 +6,37 @@
 
 <h2>Environments and Technologies Used</h2>
 
-<p><span style="color:#2980b9">- Microsoft Azure (Virtual Machines/Compute) - Remote Desktop - Active Directory Domain Services - PowerShell</span></p>
+- Microsoft Azure (Virtual Machines/Compute)
+- Remote Desktop
+- Active Directory Domain Services
+- PowerShell
 
-<h2>Operating Systems Used</h2>
+<h2>Operating Systems Used </h2>
 
-<p><span style="color:#2980b9">- Windows Server 2022 - Windows 10 (21H2)</span></p>
+- Windows Server 2022
+- Windows 10 (21H2)
 
 <h2>Configuration Steps</h2>
 
-<p><span style="color:#2980b9">- Task 1: Create resources - Task 2: Establish connectivity to between Domain Controller and Client - Task 3: Install Active Directory - Task 4: Create an administrator and regular account in Active Directory - Task 5: Join Client to the Domain Controller - Task 6: Setup Remote Desktop for non-administrative users to Client - Task 7: Create users in Active Directory using Powershell script</span></p>
+- Task 1: Create resources
+- Task 2: Establish connectivity to between Domain Controller and Client
+- Task 3: Install Active Directory
+- Task 4: Create an administrator and regular account in Active Directory
+- Task 5: Join Client to the Domain Controller 
+- Task 6: Setup Remote Desktop for non-administrative users to Client
+- Task 7: Create users in Active Directory using Powershell script
 
 <h3><strong>Task #1: Create Resources</strong></h3>
 
-<p><span style="color:#2980b9">The 1st task is to create to two Azure virtual machines. The 1st virtual machine is the domain controller (DC-1) which will have Windows Server 2022.&nbsp; The second virtual machine is the client (Client-1) which will have Windows 10. The client is just any computer connected to the domain controller. -Note: Ensure that Client-1 is on the same virutal network as DC-1. You can confirm this under the &quot;Networking&quot; tab &gt; topology from within your VM.</span></p>
+<p>The 1st task is to create to two Azure virtual machines. The 1st virtual machine is the domain controller (DC-1) which will have Windows Server 2022.&nbsp; The second virtual machine is the client (Client-1) which will have Windows 10. The client is just any computer connected to the domain controller. -Note: Ensure that Client-1 is on the same virutal network as DC-1. You can confirm this under the &quot;Networking&quot; tab &gt; topology from within your VM.</p>
 
 <p><a href="https://imgur.com/HyGecxa"><img src="https://i.imgur.com/HyGecxa.png" title="source: imgur.com" /></a></p>
 
 <p><a href="https://imgur.com/miLS17P"><img src="https://i.imgur.com/miLS17P.png" title="source: imgur.com" /></a></p>
 
-<p><span style="color:#2980b9">-Next is to ensure DC-1&#39;s private IP address is changed from dynamic to static. -DC-1&#39;s private IP address needs to be static so it does not change during the course of this exercise. -To do this, go to DC-1&#39;s &quot;Networking&quot; section and click on the virtual Network Interface Card (NIC).</span></p>
+<p>-Next is to ensure DC-1&#39;s private IP address is changed from dynamic to static. 
+-DC-1&#39;s private IP address needs to be static so it does not change during the course of this exercise. 
+-To do this, go to DC-1&#39;s &quot;Networking&quot; section and click on the virtual Network Interface Card (NIC).</p>
 
 <p><a href="https://imgur.com/aQEuOOM"><img src="https://i.imgur.com/aQEuOOM.png" title="source: imgur.com" /></a></p>
 
@@ -158,18 +170,53 @@ T-o do this, go back to the Azure Portal. -Go to the Client-1 virtual machine an
 
 <h3><strong>Task #7: Create Users in Active Directory Using Powershell Script</strong></h3>
 
-<p><span style="color:#2980b9">-The script below creates 10,000 users with the password &quot;Password1.&quot;</span></p>
+Seventh and final step is to use Powershell to create users. 
 
-<p>&nbsp;</p>
+<p></p>
 
-<p>``` # ----- Edit these Variables for your own Use Case ----- # $PASSWORD_FOR_USERS = &quot;Password1&quot; $USER_FIRST_LAST_LIST = Get-Content .\names.txt # ------------------------------------------------------ # $password = ConvertTo-SecureString $PASSWORD_FOR_USERS -AsPlainText -Force New-ADOrganizationalUnit -Name _USERS -ProtectedFromAccidentalDeletion $false foreach ($n in $USER_FIRST_LAST_LIST) { $first = $n.Split(&quot; &quot;)[0].ToLower() $last = $n.Split(&quot; &quot;)[1].ToLower() $username = &quot;$($first.Substring(0,1))$($last)&quot;.ToLower() Write-Host &quot;Creating user: $($username)&quot; -BackgroundColor Black -ForegroundColor Cyan New-AdUser -AccountPassword $password ` -GivenName $first ` -Surname $last ` -DisplayName $username ` -Name $username ` -EmployeeID $username ` -PasswordNeverExpires $true ` -Path &quot;ou=_USERS,$(([ADSI]`&quot;&quot;).distinguishedName)&quot; ` -Enabled $true } ``` Go back into DC-1 and open Windows Powershell from the start menu. Right click it and &quot;Run as administrator.&quot; Copy and paste the script into a new Powershell console. I modified the script to only create 10 users so it is easier to manage and play around with.</p>
+The script below creates 10 users with the password "Password1." You may edit the number of users you would like to create as well.
+
+<p></p>
+
+
+```
+# ----- Edit these Variables for your own Use Case ----- #
+$PASSWORD_FOR_USERS   = "Password1"
+$USER_FIRST_LAST_LIST = Get-Content .\names.txt
+# ------------------------------------------------------ #
+
+$password = ConvertTo-SecureString $PASSWORD_FOR_USERS -AsPlainText -Force
+New-ADOrganizationalUnit -Name _USERS -ProtectedFromAccidentalDeletion $false
+
+foreach ($n in $USER_FIRST_LAST_LIST) {
+    $first = $n.Split(" ")[0].ToLower()
+    $last = $n.Split(" ")[1].ToLower()
+    $username = "$($first.Substring(0,1))$($last)".ToLower()
+    Write-Host "Creating user: $($username)" -BackgroundColor Black -ForegroundColor Cyan
+    
+    New-AdUser -AccountPassword $password `
+               -GivenName $first `
+               -Surname $last `
+               -DisplayName $username `
+               -Name $username `
+               -EmployeeID $username `
+               -PasswordNeverExpires $true `
+               -Path "ou=_USERS,$(([ADSI]`"").distinguishedName)" `
+               -Enabled $true
+}
+```
+
+Go back into DC-1 and open Windows Powershell from the start menu. Right click it and "Run as administrator."
+
+
+Copy and paste the script into a new Powershell console.
 
 <p><a href="https://imgur.com/gPgNXNF"><img src="https://i.imgur.com/gPgNXNF.png" title="source: imgur.com" /></a></p>
 
-<p><span style="color:#2980b9">-Once the users have been created, go back to Active Directory Users and Computers. -Users that were created are placed into the _ EMPLOYEES organizational unit. -Choose one user (fihapi.nile) and log into Client-1 with the user. -Write down the password</span></p>
+<p>-Once the users have been created, go back to Active Directory Users and Computers. -Users that were created are placed into the _ EMPLOYEES organizational unit. -Choose one user (fihapi.nile) and log into Client-1 with the user. -Write down the password</p>
 
 <p><a href="https://imgur.com/O4X9amV"><img src="https://i.imgur.com/O4X9amV.png" title="source: imgur.com" /></a></p>
 
-<p><span style="color:#2980b9">That&#39;s it!</span></p>
+<p>That's it!</p>
 
-<p>&nbsp;</p>
+
