@@ -58,23 +58,23 @@
 - Open Client-1 and open the Command line. 
 - Type in the command &quot;ping -t&quot; + the private IP address of DC-1. In this case, it is 10.0.0.4.
 
-<p><a href="https://imgur.com/UCuNmJB"><img src="https://i.imgur.com/UCuNmJB.png" title="source: imgur.com" /></a></p>
+<p><a href="https://imgur.com/lQk1hZw"><img src="https://i.imgur.com/lQk1hZw.png" title="source: imgur.com" /></a></p>
 
 - Due to the firewall blocking incoming Internet Control Message Protocol (ICMP) traffic, the request is timing out. 
 - To fix this, login into DC-1 and open the application Windows Defender Firewall with Advanced Security from the Start menu.
 
-<p><a href="https://imgur.com/UPOSpZx"><img src="https://i.imgur.com/UPOSpZx.png" title="source: imgur.com" /></a></p>
+<p><<a href="https://imgur.com/ZbHXCAE"><img src="https://i.imgur.com/ZbHXCAE.png" title="source: imgur.com" /></a></p>
 
-<p><a href="https://imgur.com/78fL6it"><img src="https://i.imgur.com/78fL6it.png" title="source: imgur.com" /></a></p>
+<p><a href="https://imgur.com/tYKGcq2"><img src="https://i.imgur.com/tYKGcq2.png" title="source: imgur.com" /></a></p>
 
 - From here, sort the list by protocol so it is easier to see. 
 - Scroll down to ICMPv4 and enable these two inbound rules.
 
-<p><a href="https://imgur.com/cHp0nwS"><img src="https://i.imgur.com/cHp0nwS.png" title="source: imgur.com" /></a></p>
+<p><a href="https://imgur.com/uliuVhW"><img src="https://i.imgur.com/uliuVhW.png" title="source: imgur.com" /></a></p>
 
 - Switch back to Client-1 and the Command line will start to ping DC-1 successfully.
 
-<p><a href="https://imgur.com/fRlg3vt"><img src="https://i.imgur.com/fRlg3vt.png" title="source: imgur.com" /></a></p>
+<p><a href="https://imgur.com/pOEu32a"><img src="https://i.imgur.com/pOEu32a.png" title="source: imgur.com" /></a></p>
 
 <h3><strong>Task 3: Install Active Directory</strong></h3>
 
@@ -82,40 +82,40 @@
 - Go back into DC-1 Open the Server Manager in DC-1.
 - This should normally open whenever DC-1 is logged into for the first. It can also be found in the Start menu.
 
-<p><a href="https://imgur.com/mO9OcUw"><img src="https://i.imgur.com/mO9OcUw.png" title="source: imgur.com" /></a></p>
+<p><a href="https://imgur.com/pmODHgx"><img src="https://i.imgur.com/pmODHgx.png" title="source: imgur.com" /></a></p>
 
 - In Server Manager, click &quot;Add roles and features.&quot; Follow the prompts. At &quot;Server Roles&quot;, check &quot;Active Directory Domain Services.&quot; Then click &quot;Add Features.&quot;
 
-<p><a href="https://imgur.com/mO9OcUw"><img src="https://i.imgur.com/mO9OcUw.png" title="source: imgur.com" /></a></p>
+<p><a href="https://imgur.com/epQTsNH"><img src="https://i.imgur.com/epQTsNH.png" title="source: imgur.com" /></a></p>
 
-<p><a href="https://imgur.com/u0Bk6C7"><img src="https://i.imgur.com/u0Bk6C7.png" title="source: imgur.com" /></a></p>
+<p><a href="https://imgur.com/UjKZxkp"><img src="https://i.imgur.com/UjKZxkp.png" title="source: imgur.com" /></a></p>
 
 - Continue to follow all the installation prompts until it is done.
 
-<p><a href="https://imgur.com/KQF8I0k"><img src="https://i.imgur.com/KQF8I0k.png" title="source: imgur.com" /></a></p>
+<p><a href="https://imgur.com/FH9alix"><img src="https://i.imgur.com/FH9alix.png" title="source: imgur.com" /></a></p>
 
 - Once the installation is done, back at the Server Manager Dashboard, click the flag with the yellow hazard sign underneath.
 - Then click &quot;Promote this server to a domain controller.&quot;
 
-<p><a href="https://imgur.com/EFIwVZe"><img src="https://i.imgur.com/EFIwVZe.png" title="source: imgur.com" /></a></p>
+<p><a href="https://imgur.com/SMHOmvN"><img src="https://i.imgur.com/SMHOmvN.png" title="source: imgur.com" /></a></p>
 
-<p><a href="https://imgur.com/YIf88om"><img src="https://i.imgur.com/YIf88om.png" title="source: imgur.com" /></a></p>
+<p><a href="https://imgur.com/YhVGGiC"><img src="https://i.imgur.com/YhVGGiC.png" title="source: imgur.com" /></a></p>
 
 - Click &quot;Add a new forest&quot; and type in the root domain. In this example, it was mydomain.com.
 
-<p><a href="https://imgur.com/fjYGxMk"><img src="https://i.imgur.com/fjYGxMk.png" title="source: imgur.com" /></a></p>
+<p><a href="https://imgur.com/GVRjrOM"><img src="https://i.imgur.com/GVRjrOM.png" title="source: imgur.com" /></a></p>
 
 - Follow all the prompts to finish the installation.
 - DC-1 will restart to add all the updates.
 
-<p><a href="https://imgur.com/QIc2E1e"><img src="https://i.imgur.com/QIc2E1e.png" title="source: imgur.com" /></a></p>
+<p><a href="https://imgur.com/tipDxLI"><img src="https://i.imgur.com/tipDxLI.png" title="source: imgur.com" /></a></p>
 
 <h3><strong>Task #4: Create An Administrator and Regular Account in Active Directory</strong></h3>
 
 - The 4th task is to create an administrator account and a regular account in Active Directory.
 - Once DC-1 has restarted, open up Server Manager, click &quot;Tools&quot; in the upper right corner, and select &quot;Active Directory Users and Computers.&quot;
 
-<p><a href="https://imgur.com/mm4U2Sv"><img src="https://i.imgur.com/mm4U2Sv.png" title="source: imgur.com" /></a></p>
+<p><a href="https://imgur.com/Xp11haR"><img src="https://i.imgur.com/Xp11haR.png" title="source: imgur.com" /></a></p>
 
 - In Active Directory Users and Computers, right click the domain (mydomain.com), go to &quot;New&quot; and &quot;Organizational Unit.&quot;
 - Create two organizational units for administrators (_ ADMINS) and employees (_ EMPLOYEES).
@@ -155,7 +155,7 @@
 T-o do this, go back to the Azure Portal.
 Go to the Client-1 virtual machine and click on the &quot;Networking&quot; section in underneath &quot;Settings&quot; on the left hand side.
 
-<p><a href="https://imgur.com/5vz2R5I"><img src="https://i.imgur.com/5vz2R5I.png" title="source: imgur.com" /></a></p>
+<p><a href="https://imgur.com/ShfTooL"><img src="https://i.imgur.com/ShfTooL.png" title="source: imgur.com" /></a></p>
 
 - Click on &quot;DNS Servers.&quot;
 - Then click, &quot;Custom.&quot;
@@ -181,11 +181,16 @@ Go to the Client-1 virtual machine and click on the &quot;Networking&quot; secti
 
 <h3><strong>Task #6: Setup Remote Desktop for Non-Administrative users To Client</strong></h3>
 
-<p><span style="color:#2980b9">-The 6th task is to setup Remote Desktop for non-administrative users to Client-1. -Log into Client-1 using the domain name and the admin account (mydomain.com\jane_admin). -Once you have logged in, right click the Start menu and click &quot;System.&quot; -Click &quot;Remote desktop&quot; on the right side. -Next, click &quot;Add...&quot; and type in &quot;Domain Users.&quot; Click &quot;Check Names&quot; and click &quot;OK&quot; to exit out.</span></p>
+<p>The 6th task is to setup Remote Desktop for non-administrative users to Client-1.</p>
 
-<p><a href="https://imgur.com/mdi8paR"><img src="https://i.imgur.com/mdi8paR.png" title="source: imgur.com" /></a></p>
+- Log into Client-1 using the domain name and the admin account (mydomain.com\jane_admin).
+- Once you have logged in, right click the Start menu and click &quot;System.&quot;
+- Click &quot;Remote desktop&quot; on the right side.
+- Next, click &quot;Add...&quot; and type in &quot;Domain Users.&quot; Click &quot;Check Names&quot; and click &quot;OK&quot; to exit out.
 
-<p><a href="https://imgur.com/yqsnkdv"><img src="https://i.imgur.com/yqsnkdv.png" title="source: imgur.com" /></a></p>
+<p><a href="https://imgur.com/RuRK4AW"><img src="https://i.imgur.com/RuRK4AW.png" title="source: imgur.com" /></a></p>
+
+<p><a href="https://imgur.com/ppNICOk"><img src="https://i.imgur.com/ppNICOk.png" title="source: imgur.com" /></a></p>
 
 <h3><strong>Task #7: Create Users in Active Directory Using Powershell Script</strong></h3>
 
@@ -230,11 +235,11 @@ Go back into DC-1 and open Windows Powershell from the start menu. Right click i
 
 Copy and paste the script into a new Powershell console.
 
-<p><a href="https://imgur.com/gPgNXNF"><img src="https://i.imgur.com/gPgNXNF.png" title="source: imgur.com" /></a></p>
+<p><a href="https://imgur.com/csYOeKy"><img src="https://i.imgur.com/csYOeKy.png" title="source: imgur.com" /></a></p>
 
 <p>-Once the users have been created, go back to Active Directory Users and Computers. -Users that were created are placed into the _ EMPLOYEES organizational unit. -Choose one user (fihapi.nile) and log into Client-1 with the user. -Write down the password</p>
 
-<p><a href="https://imgur.com/O4X9amV"><img src="https://i.imgur.com/O4X9amV.png" title="source: imgur.com" /></a></p>
+<p><a href="https://imgur.com/8j6Z3JH"><img src="https://i.imgur.com/8j6Z3JH.png" title="source: imgur.com" /></a></p>
 
 <p>That's it!</p>
 
