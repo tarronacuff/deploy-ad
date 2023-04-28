@@ -40,76 +40,86 @@
 
 <p><a href="https://imgur.com/aQEuOOM"><img src="https://i.imgur.com/aQEuOOM.png" title="source: imgur.com" /></a></p>
 
-<p><span style="color:#2980b9">-Click on IP configurations.</span></p>
+<p><span style="color:#2980b9">- Click on IP configurations.</span></p>
 
 <p><a href="https://imgur.com/29OMhnc"><img src="https://i.imgur.com/29OMhnc.png" title="source: imgur.com" /></a></p>
 
-<p><span style="color:#2980b9">-Click on the private IP address (10.0.0.4)(Your private IP maybe different).</span></p>
+- Click on the private IP address (10.0.0.4)(Your private IP maybe different). 
 
 <p><a href="https://imgur.com/jUh0D1i"><img src="https://i.imgur.com/jUh0D1i.png" title="source: imgur.com" /></a></p>
 
-<p><span style="color:#2980b9">-Click the &quot;Assignment&quot; button to switch it from dynamic to static.</span></p>
+- Click the &quot;Assignment&quot; button to switch it from dynamic to static. 
 
 <p><a href="https://imgur.com/iXtZFN9"><img src="https://i.imgur.com/iXtZFN9.png" title="source: imgur.com" /></a></p>
 
 <h3><strong>Task 2: Establish Connectivity To Between Domain Controller and Client</strong></h3>
 
-<p><span style="color:#2980b9">-The 2nd task is to establish connectivity between Client-1 and DC-1. Use Microsoft Remote Desktop to connect to both virtual machines.<br />
--Open Client-1 and open the Command line. -Type in the command &quot;ping -t&quot; + the private IP address of DC-1. In this case, it is 10.0.0.4.</span></p>
+- The 2nd task is to establish connectivity between Client-1 and DC-1. Use Microsoft Remote Desktop to connect to both virtual machines.
+- Open Client-1 and open the Command line. 
+- Type in the command &quot;ping -t&quot; + the private IP address of DC-1. In this case, it is 10.0.0.4.
 
 <p><a href="https://imgur.com/UCuNmJB"><img src="https://i.imgur.com/UCuNmJB.png" title="source: imgur.com" /></a></p>
 
-<p><span style="color:#2980b9">-Due to the firewall blocking incoming Internet Control Message Protocol (ICMP) traffic, the request is timing out. -To fix this, login into DC-1 and open the application Windows Defender Firewall with Advanced Security from the Start menu.</span></p>
+- Due to the firewall blocking incoming Internet Control Message Protocol (ICMP) traffic, the request is timing out. 
+- To fix this, login into DC-1 and open the application Windows Defender Firewall with Advanced Security from the Start menu.
 
 <p><a href="https://imgur.com/UPOSpZx"><img src="https://i.imgur.com/UPOSpZx.png" title="source: imgur.com" /></a></p>
 
 <p><a href="https://imgur.com/78fL6it"><img src="https://i.imgur.com/78fL6it.png" title="source: imgur.com" /></a></p>
 
-<p><span style="color:#2980b9">-From here, sort the list by protocol so it is easier to see. -Scroll down to ICMPv4 and enable these two inbound rules.</span></p>
+- From here, sort the list by protocol so it is easier to see. 
+- Scroll down to ICMPv4 and enable these two inbound rules.
 
 <p><a href="https://imgur.com/cHp0nwS"><img src="https://i.imgur.com/cHp0nwS.png" title="source: imgur.com" /></a></p>
 
-<p><span style="color:#2980b9">-Switch back to Client-1 and the Command line will start to ping DC-1 successfully.</span></p>
+- Switch back to Client-1 and the Command line will start to ping DC-1 successfully.
 
 <p><a href="https://imgur.com/fRlg3vt"><img src="https://i.imgur.com/fRlg3vt.png" title="source: imgur.com" /></a></p>
 
 <h3><strong>Task 3: Install Active Directory</strong></h3>
 
-<p><span style="color:#2980b9">-The 3rd task is to install Active Directory Domain Services. -Go back into DC-1 Open the Server Manager in DC-1. -This should normally open whenever DC-1 is logged into for the first. It can also be found in the Start menu.</span></p>
+- The 3rd task is to install Active Directory Domain Services.
+- Go back into DC-1 Open the Server Manager in DC-1.
+- This should normally open whenever DC-1 is logged into for the first. It can also be found in the Start menu.
 
 <p><a href="https://imgur.com/mO9OcUw"><img src="https://i.imgur.com/mO9OcUw.png" title="source: imgur.com" /></a></p>
 
-<p><span style="color:#2980b9">-In Server Manager, click &quot;Add roles and features.&quot; Follow the prompts. At &quot;Server Roles&quot;, check &quot;Active Directory Domain Services.&quot; Then click &quot;Add Features.&quot;</span></p>
+- In Server Manager, click &quot;Add roles and features.&quot; Follow the prompts. At &quot;Server Roles&quot;, check &quot;Active Directory Domain Services.&quot; Then click &quot;Add Features.&quot;
 
 <p><a href="https://imgur.com/mO9OcUw"><img src="https://i.imgur.com/mO9OcUw.png" title="source: imgur.com" /></a></p>
 
 <p><a href="https://imgur.com/u0Bk6C7"><img src="https://i.imgur.com/u0Bk6C7.png" title="source: imgur.com" /></a></p>
 
-<p><span style="color:#2980b9">-Continue to follow all the installation prompts until it is done.</span></p>
+- Continue to follow all the installation prompts until it is done.
 
 <p><a href="https://imgur.com/KQF8I0k"><img src="https://i.imgur.com/KQF8I0k.png" title="source: imgur.com" /></a></p>
 
-<p><span style="color:#2980b9">-Once the installation is done, back at the Server Manager Dashboard, click the flag with the yellow hazard sign underneath. Then click &quot;Promote this server to a domain controller.&quot;</span></p>
+- Once the installation is done, back at the Server Manager Dashboard, click the flag with the yellow hazard sign underneath.
+- Then click &quot;Promote this server to a domain controller.&quot;
 
 <p><a href="https://imgur.com/EFIwVZe"><img src="https://i.imgur.com/EFIwVZe.png" title="source: imgur.com" /></a></p>
 
 <p><a href="https://imgur.com/YIf88om"><img src="https://i.imgur.com/YIf88om.png" title="source: imgur.com" /></a></p>
 
-<p><span style="color:#2980b9">-Click &quot;Add a new forest&quot; and type in the root domain. In this example, it was mydomain.com.</span></p>
+- Click &quot;Add a new forest&quot; and type in the root domain. In this example, it was mydomain.com.
 
 <p><a href="https://imgur.com/fjYGxMk"><img src="https://i.imgur.com/fjYGxMk.png" title="source: imgur.com" /></a></p>
 
-<p><span style="color:#2980b9">-Follow all the prompts to finish the installation. DC-1 will restart to add all the updates.</span></p>
+- Follow all the prompts to finish the installation.
+- DC-1 will restart to add all the updates.
 
 <p><a href="https://imgur.com/QIc2E1e"><img src="https://i.imgur.com/QIc2E1e.png" title="source: imgur.com" /></a></p>
 
 <h3><strong>Task #4: Create An Administrator and Regular Account in Active Directory</strong></h3>
 
-<p><span style="color:#2980b9">-The 4th task is to create an administrator account and a regular account in Active Directory. -Once DC-1 has restarted, open up Server Manager, click &quot;Tools&quot; in the upper right corner, and select &quot;Active Directory Users and Computers.&quot;</span></p>
+- The 4th task is to create an administrator account and a regular account in Active Directory.
+- Once DC-1 has restarted, open up Server Manager, click &quot;Tools&quot; in the upper right corner, and select &quot;Active Directory Users and Computers.&quot;
 
 <p><a href="https://imgur.com/mm4U2Sv"><img src="https://i.imgur.com/mm4U2Sv.png" title="source: imgur.com" /></a></p>
 
-<p><span style="color:#2980b9">-In Active Directory Users and Computers, right click the domain (mydomain.com), go to &quot;New&quot; and &quot;Organizational Unit.&quot; -Create two organizational units for administrators (_ ADMINS) and employees (_ EMPLOYEES). -Once done, right click mydomain.com and click referesh to sort the new organizational units to the top.</span></p>
+- In Active Directory Users and Computers, right click the domain (mydomain.com), go to &quot;New&quot; and &quot;Organizational Unit.&quot;
+- Create two organizational units for administrators (_ ADMINS) and employees (_ EMPLOYEES).
+- Once done, right click mydomain.com and click referesh to sort the new organizational units to the top.
 
 <p><a href="https://imgur.com/4ThewbG"><img src="https://i.imgur.com/4ThewbG.png" title="source: imgur.com" /></a></p>
 
@@ -119,7 +129,9 @@
 
 <p><a href="https://imgur.com/sGD5Wl7"><img src="https://i.imgur.com/sGD5Wl7.png" title="source: imgur.com" /></a></p>
 
-<p><span style="color:#2980b9">-Click on the _ ADMINS organizational unit and right click into the right window pane. Go to &quot;New&quot; and click &quot;User.&quot; -Fill in the boxes to create a new user. In this example, &quot;Jane Doe&quot; was used and the login name is &quot;jane_admin.&quot;</span></p>
+- Click on the _ ADMINS organizational unit and right click into the right window pane. Go to &quot;New&quot; and click &quot;User.&quot;
+- Fill in the boxes to create a new user. In this example, &quot;Jane Doe&quot; was used and the login name is &quot;jane_admin.&quot;
+
 
 <p><a href="https://imgur.com/3Y09plF"><img src="https://i.imgur.com/3Y09plF.png" title="source: imgur.com" /></a></p>
 
@@ -127,36 +139,43 @@
 
 <p><a href="https://imgur.com/7QOY1ET"><img src="https://i.imgur.com/7QOY1ET.png" title="source: imgur.com" /></a></p>
 
-<p><span style="color:#2980b9">-Once the account has been created, right click it and go to &quot;Properties.&quot; -Click the &quot;Member Of&quot; tab, click the &quot;Add...&quot; button, type in domain and click the &quot;Check Names&quot; button. -Click &quot;Domain Admins&quot; and press &quot;OK&quot; and &quot;Apply&quot; to exit out.</span></p>
+- Once the account has been created, right click it and go to &quot;Properties.&quot;
+- Click the &quot;Member Of&quot; tab, click the &quot;Add...&quot; button, type in domain and click the &quot;Check Names&quot; button.
+- Click &quot;Domain Admins&quot; and press &quot;OK&quot; and &quot;Apply&quot; to exit out.
 
 <p><a href="https://imgur.com/tAq2K6I"><img src="https://i.imgur.com/tAq2K6I.png" title="source: imgur.com" /></a></p>
 
 <p><a href="https://imgur.com/aSTfKj3"><img src="https://i.imgur.com/aSTfKj3.png" title="source: imgur.com" /></a></p>
 
-<p><span style="color:#2980b9">Next, Log out of DC-1 as &quot;labuser&quot; and log back in as the administrator account that was created (jane_admin).</span></p>
+- Next, Log out of DC-1 as &quot;labuser&quot; and log back in as the administrator account that was created (jane_admin).
 
 <h3><strong>Task #5: Join Client to the Domain Controller</strong></h3>
 
-<p><span style="color:#2980b9">-The 5th task is to join Client-1 to DC-1.<br />
-T-o do this, go back to the Azure Portal. -Go to the Client-1 virtual machine and click on the &quot;Networking&quot; section in underneath &quot;Settings&quot; on the left hand side.</span></p>
+- The 5th task is to join Client-1 to DC-1.<br />
+T-o do this, go back to the Azure Portal.
+Go to the Client-1 virtual machine and click on the &quot;Networking&quot; section in underneath &quot;Settings&quot; on the left hand side.
 
 <p><a href="https://imgur.com/5vz2R5I"><img src="https://i.imgur.com/5vz2R5I.png" title="source: imgur.com" /></a></p>
 
-<p><span style="color:#2980b9">-From there, click on &quot;DNS Servers.&quot; Then click, &quot;Custom.&quot; Type in DC-1&#39;s private IP address (10.0.0.4).</span></p>
+- Click on &quot;DNS Servers.&quot;
+- Then click, &quot;Custom.&quot;
+- Type in DC-1&#39;s private IP address (10.0.0.4).
 
 <p><a href="https://imgur.com/WjSTlit"><img src="https://i.imgur.com/WjSTlit.png" title="source: imgur.com" /></a></p>
 
 <p><a href="https://imgur.com/jEtth6T"><img src="https://i.imgur.com/jEtth6T.png" title="source: imgur.com" /></a></p>
 
-<p><span style="color:#2980b9">-Restart Client-1 then log back in. -After you have logged back in, right click the Start menu and click on &quot;System.&quot;</span></p>
+- Restart Client-1 then log back in.
+- After you have logged back in, right click the Start menu and click on &quot;System.&quot;
 
 <p><a href="https://imgur.com/jDx62mX"><img src="https://i.imgur.com/jDx62mX.png" title="source: imgur.com" /></a></p>
 
-<p><span style="color:#2980b9">-On the right hand side, click &quot;Rename this PC (advanced).&quot; -Then click the &quot;Change...&quot; button and type in the domain name (mydomain.com).</span></p>
+- On the right hand side, click &quot;Rename this PC (advanced).&quot; - Then click the &quot;Change...&quot; button and type in the domain name (mydomain.com).
 
 <p><a href="https://imgur.com/QuQCAMH"><img src="https://i.imgur.com/QuQCAMH.png" title="source: imgur.com" /></a></p>
 
-<p><span style="color:#2980b9">-In the Command prompt (windows key, type cmd), and type the command &quot;ipconfig /displaydns.&quot; -This will show all the Fully Qualified Domain Names associated to VM Client-1. It will show that the DNS Servers are associated to DC-1&#39;s private IP address.</span></p>
+- In the Command prompt (windows key, type cmd), and type the command &quot;ipconfig /displaydns.&quot;
+- This will show all the Fully Qualified Domain Names associated to VM Client-1. It will show that the DNS Servers are associated to DC-1&#39;s private IP address.
 
 <p><a href="https://imgur.com/qv7lUQ0"><img src="https://i.imgur.com/qv7lUQ0.png" title="source: imgur.com" /></a></p>
 
