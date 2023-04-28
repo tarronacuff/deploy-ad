@@ -1,6 +1,6 @@
 <p><img alt="Microsoft Active Directory Logo" src="https://i.imgur.com/pU5A58S.png" /></p>
 
-<h1>How to Install and Use Active Directory</h1>
+<h1>How to Install and Deploy Active Directory</h1>
 
 <p><span style="color:#2980b9">Active Directory is a directory service created by Microsoft that allows network administrators to manage and organize a company&#39;s resources, such as computers, users, and security policies. It provides a centralized database of information about all the resources on a network and enables administrators to manage those resources from a single location.</span></p>
 
