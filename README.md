@@ -121,31 +121,31 @@
 - Create two organizational units for administrators (_ ADMINS) and employees (_ EMPLOYEES).
 - Once done, right click mydomain.com and click referesh to sort the new organizational units to the top.
 
-<p><a href="https://imgur.com/4ThewbG"><img src="https://i.imgur.com/4ThewbG.png" title="source: imgur.com" /></a></p>
+<p><a href="https://imgur.com/xekMn8E"><img src="https://i.imgur.com/xekMn8E.png" title="source: imgur.com" /></a></p>
 
-<p><a href="https://imgur.com/PvcGghs"><img src="https://i.imgur.com/PvcGghs.png" title="source: imgur.com" /></a></p>
+<p><a href="https://imgur.com/GBG6Xut"><img src="https://i.imgur.com/GBG6Xut.png" title="source: imgur.com" /></a></p>
 
-<p><a href="https://imgur.com/JuvWsF4"><img src="https://i.imgur.com/JuvWsF4.png" title="source: imgur.com" /></a></p>
+<p><a href="https://imgur.com/coNj1mc"><img src="https://i.imgur.com/coNj1mc.png" title="source: imgur.com" /></a></p>
 
-<p><a href="https://imgur.com/sGD5Wl7"><img src="https://i.imgur.com/sGD5Wl7.png" title="source: imgur.com" /></a></p>
+<p><a href="https://imgur.com/Z21Dnme"><img src="https://i.imgur.com/Z21Dnme.png" title="source: imgur.com" /></a></p>
 
 - Click on the _ ADMINS organizational unit and right click into the right window pane. Go to &quot;New&quot; and click &quot;User.&quot;
 - Fill in the boxes to create a new user. In this example, &quot;Jane Doe&quot; was used and the login name is &quot;jane_admin.&quot;
 
 
-<p><a href="https://imgur.com/3Y09plF"><img src="https://i.imgur.com/3Y09plF.png" title="source: imgur.com" /></a></p>
+<p><a href="https://imgur.com/h8Wm70Z"><img src="https://i.imgur.com/h8Wm70Z.png" title="source: imgur.com" /></a></p>
 
-<p><a href="https://imgur.com/lUCd1EB"><img src="https://i.imgur.com/lUCd1EB.png" title="source: imgur.com" /></a></p>
+<p><a href="https://imgur.com/tHQy5ep"><img src="https://i.imgur.com/tHQy5ep.png" title="source: imgur.com" /></a></p>
 
-<p><a href="https://imgur.com/7QOY1ET"><img src="https://i.imgur.com/7QOY1ET.png" title="source: imgur.com" /></a></p>
+<p><a href="https://imgur.com/iqk5mDY"><img src="https://i.imgur.com/iqk5mDY.png" title="source: imgur.com" /></a></p>
 
 - Once the account has been created, right click it and go to &quot;Properties.&quot;
 - Click the &quot;Member Of&quot; tab, click the &quot;Add...&quot; button, type in domain and click the &quot;Check Names&quot; button.
 - Click &quot;Domain Admins&quot; and press &quot;OK&quot; and &quot;Apply&quot; to exit out.
 
-<p><a href="https://imgur.com/tAq2K6I"><img src="https://i.imgur.com/tAq2K6I.png" title="source: imgur.com" /></a></p>
+<p><a href="https://imgur.com/dwriDz7"><img src="https://i.imgur.com/dwriDz7.png" title="source: imgur.com" /></a></p>
 
-<p><a href="https://imgur.com/aSTfKj3"><img src="https://i.imgur.com/aSTfKj3.png" title="source: imgur.com" /></a></p>
+<p><a href="https://imgur.com/SWXQ7rc"><img src="https://i.imgur.com/SWXQ7rc.png" title="source: imgur.com" /></a></p>
 
 - Next, Log out of DC-1 as &quot;labuser&quot; and log back in as the administrator account that was created (jane_admin).
 
@@ -168,7 +168,7 @@ Go to the Client-1 virtual machine and click on the &quot;Networking&quot; secti
 - Restart Client-1 then log back in.
 - After you have logged back in, right click the Start menu and click on &quot;System.&quot;
 
-<p><a href="https://imgur.com/jDx62mX"><img src="https://i.imgur.com/jDx62mX.png" title="source: imgur.com" /></a></p>
+<p><a href="https://imgur.com/EjtOZEO"><img src="https://i.imgur.com/EjtOZEO.png" title="source: imgur.com" /></a></p>
 
 - On the right hand side, click &quot;Rename this PC (advanced).&quot; - Then click the &quot;Change...&quot; button and type in the domain name (mydomain.com).
 
@@ -177,7 +177,7 @@ Go to the Client-1 virtual machine and click on the &quot;Networking&quot; secti
 - In the Command prompt (windows key, type cmd), and type the command &quot;ipconfig /displaydns.&quot;
 - This will show all the Fully Qualified Domain Names associated to VM Client-1. It will show that the DNS Servers are associated to DC-1&#39;s private IP address.
 
-<p><a href="https://imgur.com/qv7lUQ0"><img src="https://i.imgur.com/qv7lUQ0.png" title="source: imgur.com" /></a></p>
+<p><a href="https://imgur.com/xyRTgLt"><img src="https://i.imgur.com/xyRTgLt.png" title="source: imgur.com" /></a></p>
 
 <h3><strong>Task #6: Setup Remote Desktop for Non-Administrative users To Client</strong></h3>
 
