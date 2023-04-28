@@ -16,7 +16,7 @@
 - Windows Server 2022
 - Windows 10 (21H2)
 
-<h2>Configuration Steps</h2>
+<h2>Configuration Task</h2>
 
 - Task 1: Create resources
 - Task 2: Establish connectivity to between Domain Controller and Client
